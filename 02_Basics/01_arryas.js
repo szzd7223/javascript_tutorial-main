@@ -19,12 +19,12 @@ console.log(myArray)
 myArray.shift() //remove first element from the array
 console.log(myArray)
 
-console.log(myArray.includes(3)) //returns true or false depending on if the element is present in array or not
+console.log(myArray.includes(8)) //returns true or false depending on if the element is present in array or not
 
 console.log(myArray.indexOf('abc')) //return the index of the element in arguement if it is present in array, returns -1 if the element is not present in array
 
 const newArray = ["Red", "dead", "redemption", "2"]
-console.log(newArray + " " + typeof newArray) 
+console.log(newArray + " " + typeof newArray)
 console.log(newArray.join() + " " +  typeof newArray.join()) //it joins the elements of the array and covert it into string
 
 
