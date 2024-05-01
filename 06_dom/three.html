@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding list item function</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="langList">
+        <li>Python</li>
+    </ul>
+</body>
+<script>
+    // normal approach
+    function addLang(lang) {
+        let newElement = document.createElement("li")
+        newElement.innerText = lang
+        document.querySelector(".langList").appendChild(newElement)
+    }
+    addLang("JS")
+
+    // optimized approach
+    function addLangOptimized(lang) {
+        let newElement = document.createElement("li")
+        newElement.appendChild(document.createTextNode(lang))
+        document.querySelector(".langList").appendChild(newElement)
+    }
+    addLangOptimized("C++")
+
+    //Edit elemtnt
+    function editElement(lang) {
+        let element = document.querySelector("li:nth-child(1)")
+        const newElement = document.createElement("li")
+        newElement.textContent = lang
+        element.replaceWith(newElement)
+    }
+    editElement("Ruby")
+
+    //remove element
+    function removeElement() {
+        const element = document.querySelector("li:last-child")
+        element.remove()
+    }
+    removeElement()
+    console.log(document.querySelector(".langList"))
+</script>
+</html>
