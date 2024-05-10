@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hehehehe</title>
+</head>
+<body>
+    <h1>Bangalore Press</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let time = new Date()
+    const startText = function(){
+        console.log('Started')
+        console.log(time.toLocaleTimeString())
+    }
+    const stopText = function(){
+        console.log('Stopped')
+    }
+
+    let intervalId = null
+    document.querySelector('#start').addEventListener('click', function(){
+        if(!intervalId){
+            intervalId = setInterval(startText, 1000)
+        }
+    })
+    document.querySelector('#stop').addEventListener('click', function(){
+        if(intervalId){
+            clearInterval(intervalId)
+            stopText()
+        }
+    })
+</script>
+</html>
