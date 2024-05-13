@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML HTTP Request</title>
+</head>
+<body>
+    <h1>This is how you get an xml HTTP request</h1>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/szzd7223'
+    const xhr = new XMLHttpRequest()
+    const placeholder = document.createElement('img')
+    
+    xhr.onreadystatechange = function() {
+        // console.log(xhr.readyState)
+        if(xhr.readyState === 4) {
+            response = JSON.parse(this.response)
+            console.log(response.avatar_url)
+            placeholder.src = response.avatar_url
+            document.querySelector('body').appendChild(placeholder)
+        }
+    }
+    xhr.open('GET', requestUrl)
+    xhr.send()
+    
+
+</script>
+</html>
